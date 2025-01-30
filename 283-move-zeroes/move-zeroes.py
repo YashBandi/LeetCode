@@ -9,7 +9,7 @@ class Solution:
             if nums[i] != 0:
                 nums[i], nums[z] = nums[z], nums[i]
                 z += 1  
-            i += 1 
+             
 
 
 
