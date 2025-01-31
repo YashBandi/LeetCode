@@ -1,14 +1,16 @@
 class Solution:
     def maxVowels(self, s: str, k: int) -> int:
         vowels = "aeiou" #{'a','e','i','o','u'}
-        maxCount = count = sum(1 for i in s[:k] if i in vowels)
+        max_count = count = sum(1 for i in s[:k] if i in vowels)
         for i in range(len(s)-k):
             if s[i] in vowels:
                 count -= 1
             if s[i+k] in vowels:
                 count += 1
-            maxCount = max(count,maxCount)
-        return maxCount
+            if count > max_count:
+                max_count = count
+            # max_count = max(count,maxCount)
+        return max_count
 
 
     # Solution 2: Output Limit Exceeded 98/107 Testcases. Correct code but more Runtime  
