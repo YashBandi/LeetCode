@@ -6,7 +6,9 @@ class Solution:
         # Slide the window across the array
         for i in range(k, len(nums)):
             window_sum += nums[i] - nums[i - k]  # Add next element, remove first element of window
-            max_sum = max(max_sum, window_sum)
+            # max_sum = max(max_sum, window_sum)
+            if max_sum < window_sum:
+                max_sum = window_sum
         return max_sum / k
         
 
