@@ -4,9 +4,7 @@ class Solution:
         for i in range(len(nums)-1):
             if nums[i]>nums[i+1]:
                 c +=1 
-        if c == 1 and (nums[len(nums)-1] <= nums[0]):
-            return True
-        elif c == 0:
+        if c == 0 or (c == 1 and (nums[len(nums)-1] <= nums[0])):
             return True
         else:
             return False
